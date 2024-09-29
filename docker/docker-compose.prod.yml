@@ -1,0 +1,7 @@
+services:
+  next:
+    image: theospro/investpulse-next:latest
+    extra_hosts:
+      - ${DNS:?err}:127.0.0.1
+  nginx:
+    image: theospro/investpulse-nginx:latest

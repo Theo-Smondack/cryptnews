@@ -1,0 +1,13 @@
+services:
+  next:
+    build:
+      context: .
+      dockerfile: docker/next/Dockerfile.dev
+    volumes:
+      - .:/home/node/app
+    extra_hosts:
+      - ${DNS:?err}:127.0.0.1
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
